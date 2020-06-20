@@ -18,6 +18,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.network "forwarded_port", guest: 80, host: 8088
+  config.vm.network "forwarded_port", guest: 3306, host: 33306
   
   # map shared folders
   config.vm.synced_folder "./myapp", "/var/www/myapp", :nfs => { :mount_options => ["dmode=777","fmode=666"] }  
