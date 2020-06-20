@@ -1,37 +1,33 @@
+
 # Vagrant Laravel
 
-Wuick and easy dev environment for Laravel development using Vagrant
+Quick and easy development environment for developing Laravel applications using Vagrant.
 Uses Vagrant to provision an ubuntu server on virtual box.
-
 
 ## Requirements
 
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 
-If the vagrant Server is already up and running:
-- Access the _myapp_ application:  <http://localhost:8088/>
+If the vagrant Server is already up and running you can access the the application (in the **_myapp_** directory):  <http://localhost:8088/>
 
-_These IPs will also work: <http://127.0.0.1> or <http://192.168.94.1>_
+_These IPs will also work: <http://127.0.0.1:8088> or <http://192.168.94.1:8088>_
 
 
 ## Get Started
 
 
-##### Clone Repo:
+#### Clone Repo:
 
 ```
-
 git clone https://github.com/mkeneqa/vagrant-laravel.git
-
 ```
 
 ### File Structure
 
-The files structure within the folder should be as follows:
+After cloning your folder structure should look like this:
 
 ```
-
 │ README.md
 │ Vagrantfile
 │
@@ -39,19 +35,16 @@ The files structure within the folder should be as follows:
 │
 ├───prepare
 │     apache2.conf
-│     myapp.conf│     
+│     myapp.conf
 │     ports.conf
 │     setup.sh
 │
-
 ```
 
-##### Server Provisioning with Vagrant
+#### Server Provisioning with Vagrant
 
 ```
-
 vagrant up
-
 ```
 
 **Note:** Vagrant will still be running when the setup is done.  
@@ -69,15 +62,10 @@ Change directories to the REC folder and start the server.
 Type in the command line:
 
 ```
-
 vagrant up
-
 ```
 
-or for the lazy, double click the __`vagrant_up.exe`__ file
-
-- Access the Frontend application:  <http://localhost:8080/>
-- Access the Backend application: <http://localhost:8090/>
+<http://localhost:8088/>
 
 
 ### Stop Server
@@ -85,29 +73,39 @@ or for the lazy, double click the __`vagrant_up.exe`__ file
 To stop the server type in the terminal:
 
 ```
-
 vagrant halt
+```
+### View Laravel App
+<http://localhost:8088/>
 
+
+## Existing Applications
+
+If you have an existing application then clone it into  the `myapp` directory.
+
+## Installing New Laravel Application
+If starting from scratch follow these steps:
+
+```bash
+vagrant ssh
+
+cd /var/www/myapp
+composer create-project --prefer-dist laravel/laravel .
+
+# set frontend scaffolding more options: https://laravel.com/docs/7.x/frontend
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install
+npm run dev
 ```
 
-
-## Application Configuration
-
-If you have existing applications clone and put into  the `myapp` directory.
-
-A few additional changes are needed to get the application to load properly.
-
-### Front End Configuration
-
-Open and edit the `.env` file in the __frontend__ directory: `/frontend/.env` . Update this key:
-
-```
-APIHOST=localhost:8090/
-```
+## Additional Configs
 
 ### Enabling xDebug
 
-xDebug is already installed on the vagrant server. It just needs to be enabled via the `php.ini`.
+**NOTE**: _This should already be enabled during the Vagrant provisioning step_
+
+xDebug is already installed on the vagrant server. It may need to be enabled via the `php.ini`.
 
 First log in to the vagrant server using : `vagrant ssh`
 
@@ -122,9 +120,8 @@ echo 'xdebug.remote_host=' >> /etc/php/7.4/apache2/php.ini
 echo 'xdebug.max_nesting_level=1000' >> /etc/php/7.4/apache2/php.ini
 echo 'xdebug.idekey=PHPSTORM' >> /etc/php/7.4/apache2/php.ini
 ```
+Restart apache server: `sudo apachectl restart`
 
-Restart Apache2 Server: `sudo apachectl restart`
-
-#### PhpStorm IDE Configuration
+### PhpStorm IDE Configuration
 
 For the __PhpStorm__ IDE here's a [tutorial to configure xDebug](https://odan.github.io/2019/01/19/install-xdebug-and-configure-phpstorm-for-vagrant.html).
