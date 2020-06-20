@@ -1,7 +1,8 @@
 # Vagrant Laravel
 
 Quick and easy development environment for developing Laravel applications using Vagrant.
-Uses Vagrant to provision an ubuntu server on virtual box.
+
+This setup uses Vagrant to provision an ubuntu server on virtual box.
 
 ## Requirements
 
@@ -51,12 +52,10 @@ vagrant up
 
 ## Usage
 
-After the set up, the server can be started anytime.The vagrant server must be started within the project folder where the __`Vagrantfile`__ is located
+The vagrant server must be started within the project folder where the __`Vagrantfile`__ is located.
 
 
 ### Start Server
-
-Change directories to the folder and start the server. 
 
 Type in the command line:
 
@@ -79,9 +78,9 @@ vagrant halt
 
 ## Existing Applications
 
-If you have an existing application then clone it into  the `myapp` directory.
+`git clone` it into  the `myapp` directory if using an existing Laravel application.
 
-## Installing New Laravel Application
+## Laravel from Scratch
 If starting from scratch follow these steps:
 
 ```bash
