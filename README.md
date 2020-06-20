@@ -118,9 +118,12 @@ mysql -uroot -proot
 
 ```
 **host:** `localhost` or `127.0.0.1`
+
 **user:** `root`
+
 **pswd:** `root`
-**port:** `33306` 
+
+**port:** `33306`
 
 
 ### Enabling xDebug
