@@ -1,4 +1,3 @@
-
 # Vagrant Laravel
 
 Quick and easy development environment for developing Laravel applications using Vagrant.
@@ -47,7 +46,7 @@ After cloning your folder structure should look like this:
 vagrant up
 ```
 
-**Note:** Vagrant will still be running when the setup is done.  
+**Note:** _Vagrant will still be running when the setup is done._
 
 
 ## Usage
@@ -57,15 +56,13 @@ After the set up, the server can be started anytime.The vagrant server must be s
 
 ### Start Server
 
-Change directories to the REC folder and start the server. 
+Change directories to the folder and start the server. 
 
 Type in the command line:
 
 ```
 vagrant up
 ```
-
-<http://localhost:8088/>
 
 
 ### Stop Server
@@ -75,7 +72,8 @@ To stop the server type in the terminal:
 ```
 vagrant halt
 ```
-### View Laravel App
+
+### Access Laravel App
 <http://localhost:8088/>
 
 
