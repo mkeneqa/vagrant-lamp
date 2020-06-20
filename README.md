@@ -72,16 +72,16 @@ To stop the server type in the terminal:
 vagrant halt
 ```
 
-### Access Laravel App
+### Access App
 <http://localhost:8088/>
 
 
 ## Existing Applications
 
-`git clone` it into  the `myapp` directory if using an existing Laravel application.
+`git clone` it into  the `myapp` directory if using an existing LAMP application.
 
-## Laravel from Scratch
-If starting from scratch follow these steps:
+## Installing Laravel from Scratch
+If starting Laravel from scratch follow these steps:
 
 ```bash
 vagrant ssh
@@ -96,10 +96,22 @@ npm install
 npm run dev
 ```
 
+**NOTE:** _Follow the above to install other LAMP apps like symfony or WordPress_
+
 ## Additional Configs
+
 
 ### MySQL Access
 
+```bash
+
+mysql -uroot -proot
+
+```
+**host:** `localhost` or `127.0.0.1`
+**user:** `root`
+**pswd:** `root`
+**port:** `33306` 
 
 
 ### Enabling xDebug
