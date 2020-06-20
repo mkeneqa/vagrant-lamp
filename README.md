@@ -1,8 +1,8 @@
-# Vagrant Laravel
+# Vagrant Lamp Stack
 
-Quick and easy development environment for developing Laravel applications using Vagrant.
+Quick and easy development environment for developing LAMP apps - eg. Laravel applications - using Vagrant.
 
-This setup uses Vagrant to provision an ubuntu server on virtual box.
+This setup uses Vagrant to provision an ubuntu LAMP server on virtual box.
 
 ## Requirements
 
@@ -97,6 +97,10 @@ npm run dev
 ```
 
 ## Additional Configs
+
+### MySQL Access
+
+
 
 ### Enabling xDebug
 
