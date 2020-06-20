@@ -125,6 +125,8 @@ mysql -uroot -proot
 
 **port:** `33306`
 
+**pre-created database:** `myapp_db`
+
 
 ### Enabling xDebug
 
