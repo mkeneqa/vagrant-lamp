@@ -72,6 +72,15 @@ To stop the server type in the terminal:
 vagrant halt
 ```
 
+### Delete Vagrant Server
+
+```
+vagrant destroy --f
+```
+
+**NOTE:** _This won't remove files and folders within the `myapp` directory_
+
+
 ### Access App
 <http://localhost:8088/>
 
