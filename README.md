@@ -90,7 +90,10 @@ vagrant destroy --f
 
 
 
-# Additional Configurations
+# Additional Options
+
+Extra options that may help with setting up your application.
+
 
 ## Existing Applications
 
