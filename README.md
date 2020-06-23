@@ -90,9 +90,9 @@ vagrant destroy --f
 `git clone` it into  the `myapp` directory if using an existing LAMP application.
 
 
-## Additional Configurations
+# Additional Configurations
 
-### MySQL Info (!DON'T USE IN PRODUCTION!)
+## MySQL Info (!DON'T USE IN PRODUCTION!)
 
 ```bash
 
@@ -100,15 +100,19 @@ mysql -uroot -proot
 
 ```
 **host:** `localhost` or `127.0.0.1` (or whatever ip you have specified if using private network)
+
 **user:** `root`
+
 **pswd:** `root`
+
 **port:** `33306`
+
 **pre-created database:** `myapp_db`
 
 
-### Setting Vagrant with Hostname:
+## Setting Vagrant with Hostname:
 
-#### 1. Set Network Options in Vagrant File
+#### Set Network Options in Vagrant File
 
 Uncomment these lines in the `Vagrantfile` and save. 
 You can use whatever domain you want but don't use the `.dev` TLD.
@@ -118,34 +122,37 @@ You can use whatever domain you want but don't use the `.dev` TLD.
 # config.vm.hostname = '<yourdomain>.local'
 ```
 
-#### 2. Add Domain Entry to Hosts File
+#### Add Domain Entry to Hosts File
 In Windows open the command line application as Administrator. 
 
 Type this in the command line: `notepad.exe C:\Windows\System32\drivers\etc\hosts`
 
-Add your domain entry in the **hosts** file in notepad and save:
+Add domain entry to **hosts** file in notepad and save:
+
+eg:
 
 ```
 192.168.10.10       	<yourdomain>.local
-
 ```
 
-#### 3. Restart Vagrant
+#### Restart Vagrant
 
 ```
 vagrant reload
 ```
 
 
-**NOTE**: _ Tested on Windows host but should work on other hosts_
+**NOTE**: _Tested on Windows host but should work on other hosts_
 
 **Sources:**
+
 [Vagrant Private Network](https://www.vagrantup.com/docs/networking/private_network#static-ip)
+
 [Vagrant With Hostname](https://unix.stackexchange.com/questions/493484/how-do-i-configure-a-vagrant-virtual-machine-with-a-host-name)
 
 
 
-### Enabling xDebug
+## Enabling xDebug
 
 **NOTE**: _This should already be enabled during the Vagrant provisioning step_
 
@@ -166,12 +173,12 @@ echo 'xdebug.idekey=PHPSTORM' >> /etc/php/7.4/apache2/php.ini
 ```
 Restart apache server: `sudo apachectl restart`
 
-### PhpStorm IDE Configuration
+### Configure XDebug with PhpStorm IDE
 
 For the __PhpStorm__ IDE here's a [tutorial to configure xDebug](https://odan.github.io/2019/01/19/install-xdebug-and-configure-phpstorm-for-vagrant.html).
 
 
-### Installing Laravel from Scratch
+## Installing Laravel from Scratch
 
 
 ```bash
