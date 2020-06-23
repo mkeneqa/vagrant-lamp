@@ -13,6 +13,15 @@ If the vagrant Server is already up and running you can access the the applicati
 
 _These IPs will also work: <http://127.0.0.1:8088> or <http://192.168.94.1:8088>_
 
+## Main Sections:
+- [Getting Start](#get-started)
+- [Adding Existing Applications](#existing-applications)
+- [MySQL Config](#mysql-use)
+- [Setting Hostnames](#setting-vagrant-with-hostname)
+- [Enabling xDebug](#enabling-xdebug)
+- [Installing Laravel from Scratch](#installing-laravel-from-scratch)
+
+
 
 # Get Started
 
