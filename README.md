@@ -108,22 +108,16 @@ Extra options that may help with setting up your application.
 
 If you alread have an existing application just `git clone` it into  the `myapp` directory 
 
-Make sure to use (.)period at the end to avoid creating a nested folder.
+Make sure to put the (**.**) _period_ at the end to avoid creating a nested folder.
 
-eg: 
-```
-git clone https://github.com/user/myapp.git .
-```
+example: `git clone https://github.com/user/myapp.git .`
 
-## MySQL Use
+## MySQL Access
 
-#### This should only be used in development and NOT PRODUCTION!
+#### !! WARNING: This should only be used in development and NOT PRODUCTION!!
 
-```bash
+Command line : `mysql -uroot -proot`
 
-mysql -uroot -proot
-
-```
 **host:** `localhost` or `127.0.0.1` (or whatever ip you have specified if using private network)
 
 **user:** `root`
