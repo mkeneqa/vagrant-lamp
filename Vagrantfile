@@ -20,6 +20,10 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8088
   config.vm.network "forwarded_port", guest: 3306, host: 33306
   
+  # uncomment to use with local hosts file
+  # config.vm.network "private_network", ip: "192.168.10.10"
+  # config.vm.hostname = 'myapp.local'
+  
   # map shared folders
   config.vm.synced_folder "./myapp", "/var/www/myapp", :nfs => { :mount_options => ["dmode=777","fmode=666"] }  
 
