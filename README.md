@@ -82,17 +82,26 @@ vagrant destroy --f
 
 
 ### Access App
-<http://localhost:8088/>
+<http://localhost:8088/> _or the specified domain if hostname is configured_
 
-
-## Existing Applications
-
-`git clone` it into  the `myapp` directory if using an existing LAMP application.
 
 
 # Additional Configurations
 
-## MySQL Info (!DON'T USE IN PRODUCTION!)
+## Existing Applications
+
+If you alread have an existing application just `git clone` it into  the `myapp` directory 
+
+Make sure to use (.)period at the end to avoid created a nested folder.
+
+eg: 
+```
+git clone https://github.com/user/myapp.git .
+```
+
+## MySQL Info
+
+#### This should only be for Development NOT PRODUCTION!
 
 ```bash
 
@@ -111,6 +120,9 @@ mysql -uroot -proot
 
 
 ## Setting Vagrant with Hostname:
+
+This configuration allows the use of a FQDN and not ip addresses eg. mydomain.local
+
 
 #### Set Network Options in Vagrant File
 
