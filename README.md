@@ -17,7 +17,7 @@ _These IPs will also work: <http://127.0.0.1:8088> or <http://192.168.94.1:8088>
 # Get Started
 
 
-## Download Repo:
+### Download Repo:
 
 ```
 git clone https://github.com/mkeneqa/vagrant-lamp.git
@@ -25,7 +25,7 @@ git clone https://github.com/mkeneqa/vagrant-lamp.git
 
 or [Download it here](https://github.com/mkeneqa/vagrant-lamp/archive/default.zip)
 
-## File Structure
+### File Structure
 
 After downloading/cloning, your folder structure should look like this:
 
@@ -43,7 +43,9 @@ After downloading/cloning, your folder structure should look like this:
 │
 ```
 
-## Server Provisioning with Vagrant
+### Server Provisioning with Vagrant
+
+This will go through the process of provisioning your VM. Additionally, you may want to set up Private networking to use hostname. [See Notes on Setting Vagrant with Hostname](#setting-vagrant-with-hostname)
 
 ```
 vagrant up
