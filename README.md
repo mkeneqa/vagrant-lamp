@@ -89,43 +89,60 @@ vagrant destroy --f
 
 `git clone` it into  the `myapp` directory if using an existing LAMP application.
 
-## Installing Laravel from Scratch
-If starting Laravel from scratch follow these steps:
 
-```bash
-vagrant ssh
+## Additional Configurations
 
-cd /var/www/myapp
-composer create-project --prefer-dist laravel/laravel .
-
-# set frontend scaffolding more options: https://laravel.com/docs/7.x/frontend
-composer require laravel/ui
-php artisan ui bootstrap --auth
-npm install
-npm run dev
-```
-
-**NOTE:** _Follow the above to install other LAMP apps like symfony or WordPress_
-
-## Additional Configs
-
-
-### MySQL Access
+### MySQL Info (!DON'T USE IN PRODUCTION!)
 
 ```bash
 
 mysql -uroot -proot
 
 ```
-**host:** `localhost` or `127.0.0.1`
-
+**host:** `localhost` or `127.0.0.1` (or whatever ip you have specified if using private network)
 **user:** `root`
-
 **pswd:** `root`
-
 **port:** `33306`
-
 **pre-created database:** `myapp_db`
+
+
+### Setting Vagrant with Hostname:
+
+#### 1. Set Network Options in Vagrant File
+
+Uncomment these lines in the `Vagrantfile` and save. 
+You can use whatever domain you want but don't use the `.dev` TLD.
+
+```
+# config.vm.network "private_network", ip: "192.168.10.10"
+# config.vm.hostname = '<yourdomain>.local'
+```
+
+#### 2. Add Domain Entry to Hosts File
+In Windows open the command line application as Administrator. 
+
+Type this in the command line: `notepad.exe C:\Windows\System32\drivers\etc\hosts`
+
+Add your domain entry in the **hosts** file in notepad and save:
+
+```
+192.168.10.10       	<yourdomain>.local
+
+```
+
+#### 3. Restart Vagrant
+
+```
+vagrant reload
+```
+
+
+**NOTE**: _ Tested on Windows host but should work on other hosts_
+
+**Sources:**
+[Vagrant Private Network](https://www.vagrantup.com/docs/networking/private_network#static-ip)
+[Vagrant With Hostname](https://unix.stackexchange.com/questions/493484/how-do-i-configure-a-vagrant-virtual-machine-with-a-host-name)
+
 
 
 ### Enabling xDebug
@@ -152,3 +169,24 @@ Restart apache server: `sudo apachectl restart`
 ### PhpStorm IDE Configuration
 
 For the __PhpStorm__ IDE here's a [tutorial to configure xDebug](https://odan.github.io/2019/01/19/install-xdebug-and-configure-phpstorm-for-vagrant.html).
+
+
+### Installing Laravel from Scratch
+
+
+```bash
+vagrant ssh
+
+cd /var/www/myapp
+composer create-project --prefer-dist laravel/laravel .
+
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install
+npm run dev
+```
+
+Read more on [Laravel frontend scaffolding options](https://laravel.com/docs/7.x/frontend)
+
+
+**NOTE:** _Steps above should work for other LAMP apps like Symfony4 and WordPress_
