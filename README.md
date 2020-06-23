@@ -134,7 +134,7 @@ Command line : `mysql -uroot -proot`
 This configuration allows the use of a FQDN and not ip addresses eg. mydomain.local
 
 
-### Set Network Options in Vagrant File
+### 1. Set Network Options in Vagrant File
 
 Uncomment these lines in the `Vagrantfile` and save. 
 You can use whatever domain you want but don't use the `.dev` TLD.
@@ -144,7 +144,7 @@ You can use whatever domain you want but don't use the `.dev` TLD.
 # config.vm.hostname = '<yourdomain>.local'
 ```
 
-### Add Domain Entry to Hosts File
+### 2. Add Domain Entry to Hosts File
 In Windows open the command line application as Administrator. 
 
 Type this in the command line: `notepad.exe C:\Windows\System32\drivers\etc\hosts`
@@ -157,7 +157,7 @@ eg:
 192.168.10.10       	<yourdomain>.local
 ```
 
-### Restart Vagrant
+### 3. Restart Vagrant
 
 ```
 vagrant reload
