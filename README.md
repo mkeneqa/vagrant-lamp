@@ -14,18 +14,20 @@ If the vagrant Server is already up and running you can access the the applicati
 _These IPs will also work: <http://127.0.0.1:8088> or <http://192.168.94.1:8088>_
 
 
-## Get Started
+# Get Started
 
 
-#### Clone Repo:
+## Download Repo:
 
 ```
 git clone https://github.com/mkeneqa/vagrant-lamp.git
 ```
 
-### File Structure
+or [Download it here](https://github.com/mkeneqa/vagrant-lamp/archive/default.zip)
 
-After cloning your folder structure should look like this:
+## File Structure
+
+After downloading/cloning, your folder structure should look like this:
 
 ```
 │ README.md
@@ -41,7 +43,7 @@ After cloning your folder structure should look like this:
 │
 ```
 
-#### Server Provisioning with Vagrant
+## Server Provisioning with Vagrant
 
 ```
 vagrant up
@@ -81,7 +83,7 @@ vagrant destroy --f
 **NOTE:** _This won't remove files and folders within the `myapp` directory_
 
 
-### Access App
+## Access App
 <http://localhost:8088/> _or the specified domain if hostname is configured_
 
 
@@ -92,16 +94,16 @@ vagrant destroy --f
 
 If you alread have an existing application just `git clone` it into  the `myapp` directory 
 
-Make sure to use (.)period at the end to avoid created a nested folder.
+Make sure to use (.)period at the end to avoid creating a nested folder.
 
 eg: 
 ```
 git clone https://github.com/user/myapp.git .
 ```
 
-## MySQL Info
+## MySQL Use
 
-#### This should only be for Development NOT PRODUCTION!
+#### This should only be used in development and NOT PRODUCTION!
 
 ```bash
 
@@ -124,7 +126,7 @@ mysql -uroot -proot
 This configuration allows the use of a FQDN and not ip addresses eg. mydomain.local
 
 
-#### Set Network Options in Vagrant File
+### Set Network Options in Vagrant File
 
 Uncomment these lines in the `Vagrantfile` and save. 
 You can use whatever domain you want but don't use the `.dev` TLD.
@@ -134,7 +136,7 @@ You can use whatever domain you want but don't use the `.dev` TLD.
 # config.vm.hostname = '<yourdomain>.local'
 ```
 
-#### Add Domain Entry to Hosts File
+### Add Domain Entry to Hosts File
 In Windows open the command line application as Administrator. 
 
 Type this in the command line: `notepad.exe C:\Windows\System32\drivers\etc\hosts`
@@ -147,14 +149,14 @@ eg:
 192.168.10.10       	<yourdomain>.local
 ```
 
-#### Restart Vagrant
+### Restart Vagrant
 
 ```
 vagrant reload
 ```
 
 
-**NOTE**: _Tested on Windows host but should work on other hosts_
+**NOTE**: _This has been tested on Windows host but should work on other host OS. You'll need to change the OS host file accordingly_
 
 **Sources:**
 
@@ -197,8 +199,8 @@ For the __PhpStorm__ IDE here's a [tutorial to configure xDebug](https://odan.gi
 vagrant ssh
 
 cd /var/www/myapp
-composer create-project --prefer-dist laravel/laravel .
 
+composer create-project --prefer-dist laravel/laravel .
 composer require laravel/ui
 php artisan ui bootstrap --auth
 npm install
