@@ -5,28 +5,27 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get install -y software-properties-common
 add-apt-repository ppa:ondrej/php -y
 apt-get update
-
-apt-get install -y php7.2
-apt-get install -y php7.2-cli
-apt-get install -y php7.2-zip
-apt-get install -y php7.2-xml
-apt-get install -y php7.2-mbstring
-apt-get install -y php7.2-xdebug
-apt-get install -y php7.2-ldap
-apt-get install -y php7.2-mysql
-apt-get install -y php7.2-curl
-apt-get install -y php7.2-gd
-
-apt-get install -y apache2
-apt-get install -y git
-apt-get install -y wget
 apt-get install -y unzip
 apt-get install -y curl
+apt-get install -y git
+apt-get install -y wget
+
+apt-get install -y apache2
+apt-get install -y php7.4
+apt-get install -y php-cli
+apt-get install -y php-zip
+apt-get install -y php-xml
+apt-get install -y php-mbstring
+apt-get install -y php-xdebug
+apt-get install -y php-ldap
+apt-get install -y php-curl
+apt-get install -y php-gd
 
 # # set up mysql pass. !!DO NOT USE IN PRODUCTION
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 apt-get install -y mysql-server
+apt-get install -y php-mysql
 apt-get install -y mysql-client
 
 # Allow External Connections on your MySQL Service
@@ -53,13 +52,13 @@ a2enmod actions
 a2enmod headers
 
 # add xdebug settings to php.ini
-echo 'xdebug.remote_port=9000' >> /etc/php/7.2/apache2/php.ini
-echo 'xdebug.remote_enable=true' >> /etc/php/7.2/apache2/php.ini
-echo 'xdebug.remote_connect_back=true' >> /etc/php/7.2/apache2/php.ini
-echo 'xdebug.remote_autostart=on' >> /etc/php/7.2/apache2/php.ini
-echo 'xdebug.remote_host=' >> /etc/php/7.2/apache2/php.ini
-echo 'xdebug.max_nesting_level=1000' >> /etc/php/7.2/apache2/php.ini
-echo 'xdebug.idekey=PHPSTORM' >> /etc/php/7.2/apache2/php.ini
+echo 'xdebug.remote_port=9000' >> /etc/php/7.4/apache2/php.ini
+echo 'xdebug.remote_enable=true' >> /etc/php/7.4/apache2/php.ini
+echo 'xdebug.remote_connect_back=true' >> /etc/php/7.4/apache2/php.ini
+echo 'xdebug.remote_autostart=on' >> /etc/php/7.4/apache2/php.ini
+echo 'xdebug.remote_host=' >> /etc/php/7.4/apache2/php.ini
+echo 'xdebug.max_nesting_level=1000' >> /etc/php/7.4/apache2/php.ini
+echo 'xdebug.idekey=PHPSTORM' >> /etc/php/7.4/apache2/php.ini
 
 apache2ctl restart
 timedatectl set-timezone America/Edmonton
