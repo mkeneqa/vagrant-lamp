@@ -5,18 +5,21 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get install -y software-properties-common
 add-apt-repository ppa:ondrej/php -y
 apt-get update
-apt-get install -y apache2
-apt-get install -y php7.4
-apt-get install -y git
-apt-get install -y wget
-apt-get install -y php-cli
-apt-get install -y php-zip
 apt-get install -y unzip
 apt-get install -y curl
+apt-get install -y git
+apt-get install -y wget
+
+apt-get install -y apache2
+apt-get install -y php7.4
+apt-get install -y php-cli
+apt-get install -y php-zip
 apt-get install -y php-xml
 apt-get install -y php-mbstring
 apt-get install -y php-xdebug
 apt-get install -y php-ldap
+apt-get install -y php-curl
+apt-get install -y php-gd
 
 # # set up mysql pass. !!DO NOT USE IN PRODUCTION
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
