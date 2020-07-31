@@ -1,3 +1,4 @@
 myapp/*
 .vagrant/*
 *.log
+!myapp/.gitkeep
