@@ -30,9 +30,13 @@ _These IPs will also work: <http://127.0.0.1:8088> or <http://192.168.94.1:8088>
 
 ```
 git clone https://github.com/mkeneqa/vagrant-lamp.git
+
+git checkout php7.4
+
+git checkout php7.2
 ```
 
-or [Download it here](https://github.com/mkeneqa/vagrant-lamp/archive/default.zip)
+or [Download a Release](https://github.com/mkeneqa/vagrant-lamp/releases)
 
 ### File Structure
 
